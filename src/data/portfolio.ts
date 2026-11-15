@@ -8,7 +8,7 @@ export const profile = {
   email: "pasweb.official@gmail.com",
   location: "Indonesia",
   updated: "November 2026",
-  avatarAlt: "Placeholder foto profil Moh Ilham Darmawan",
+  avatarAlt: "Foto profil Moh Ilham Darmawan",
 };
 
 // Placeholder URL — ganti dengan URL profil sebenarnya saat tersedia.

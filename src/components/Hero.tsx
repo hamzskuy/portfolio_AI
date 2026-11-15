@@ -1,5 +1,6 @@
 import { profile } from "@/data/portfolio";
 import Reveal from "./visuals/Reveal";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -56,19 +57,19 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        {/* Visual placeholder (bukan foto asli) */}
-        <Reveal delay={200} className="relative mx-auto w-full max-w-md">
-          <div className="project-stage relative aspect-square">
-            <div className="project-card-3d absolute inset-0 m-auto h-64 w-64 rounded-[2rem] border border-[var(--border)] bg-[var(--bg-card)]/70 shadow-2xl backdrop-blur-xl" />
-            <div className="project-card-3d absolute left-6 top-8 h-40 w-40 rotate-[-8deg] rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent-2)]/20 backdrop-blur-md" />
-            <div className="project-card-3d absolute bottom-8 right-6 h-32 w-32 rotate-[12deg] rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]/60 backdrop-blur-md" />
-            <div className="absolute inset-0 m-auto flex h-64 w-64 flex-col items-center justify-center rounded-[2rem]">
-              <span className="font-display text-6xl font-bold text-[var(--accent)]">
-                {profile.initials}
-              </span>
-              <span className="mt-2 text-[10px] uppercase tracking-[0.2em] text-[var(--fg-muted)]">
-                Placeholder foto
-              </span>
+        {/* Foto profil (asli) */}
+        <Reveal delay={200} className="relative mx-auto w-full max-w-sm">
+          <div className="relative">
+            <div className="glow absolute -inset-4 rounded-[2.5rem] bg-[var(--accent)]" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--bg-card)] shadow-2xl">
+              <Image
+                src="/profile.jpg"
+                alt={profile.avatarAlt}
+                fill
+                priority
+                sizes="(max-width: 768px) 80vw, 384px"
+                className="object-cover"
+              />
             </div>
           </div>
         </Reveal>
